@@ -1,0 +1,10 @@
+#Dependencies Directory
+/node_modules/
+
+# dotenv variables
+.env
+
+# vscode setting
+.vscode
+sa.json
+fb-sa.json
