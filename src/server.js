@@ -3,24 +3,24 @@ import multipart from '@fastify/multipart';
 import * as modules from './modules';
 import cors from '@fastify/cors';
 import Fastify from 'fastify';
-import { config } from './infra';
+import { config, logger } from './infra';
 
 /**
  * Configure routes
  * @param {Fastify} server The server
  */
-const route = async server => {
-};
+const route = async server => {};
 
 const existProcess = () => process.exit(1);
 
 const handleServerError = err => {
+  logger.error(err);
   existProcess();
 };
 
 const handleValidationError = errs => {
   const error = errs.map(e => `<${e.dataPath}> ${e.message}`).join(';');
-  console.log(error);
+  logger.error(error);
 
   return { error };
 };
@@ -32,14 +32,9 @@ const handleNotFound = async req => {
 };
 
 const handleError = async (err, req, res) => {
-  if (err instanceof SyntaxError) {
-    err = `Error found: ${err.message}`;
-  }
-
-  const problem = err;
-  console.log(problem);
-
-  res.status(500).send(problem);
+  if (err instanceof SyntaxError) err = `Error found: ${err.message}`;
+  logger.error(err);
+  res.status(500).send(err);
 };
 
 /**
@@ -52,8 +47,8 @@ const openApiConfig = () => {
       host: 'localhost',
       info: {
         version: '0.0.1',
-        title: 'Project test',
-        description: 'Proyecto de prueba',
+        title: 'col-the-main-candy-store',
+        description: 'Project about main candy store',
       },
       schemas: ['http'],
       produces: ['application/json'],
@@ -97,13 +92,4 @@ const start = async server => {
   }
 };
 
-/**
- * Configures the node process
- */
-const configureProcess = () => {
-  console.log(config.server.docs.expose);
-  console.log(config.server.port);
-  console.log(config.server.ip);
-};
-
-export { build, start, configureProcess };
+export { build, start };

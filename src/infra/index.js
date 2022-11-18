@@ -1,3 +1,4 @@
+import { logger } from './logger';
 import config from './config';
 
-export { config };
+export { logger, config };
