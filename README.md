@@ -1,1 +1,1 @@
-# col-the-main-candy
+# col-the-main-candy-store
