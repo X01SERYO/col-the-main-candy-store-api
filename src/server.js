@@ -9,7 +9,9 @@ import { config, logger } from './infra';
  * Configure routes
  * @param {Fastify} server The server
  */
-const route = async server => {};
+const route = async server => {
+  modules.brand.controller.route(server);
+};
 
 const existProcess = () => process.exit(1);
 
