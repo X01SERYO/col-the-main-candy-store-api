@@ -1,6 +1,6 @@
 /**
  * Creates new brand
- * @param {Command} cmd The command
+ * @param {Object} cmd The command
  */
 const createBrand = async cmd => {
   console.log(cmd);

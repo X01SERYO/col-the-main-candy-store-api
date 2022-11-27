@@ -11,7 +11,7 @@ const schema = {
     200: {
       type: 'object',
       properties: {
-        brandId: { type: 'string' },
+        brandId: { type: 'integer' },
       },
     },
   },
