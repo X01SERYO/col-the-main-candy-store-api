@@ -1,3 +1,3 @@
-import { BrandModel } from './schema.mongoose';
+import { BrandModel } from './brand.mongoose.model';
 
 export { BrandModel };

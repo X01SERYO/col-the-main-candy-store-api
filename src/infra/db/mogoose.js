@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+/**
+ * Make connection with mongodb
+ */
 const connection = async () => {
   const username = 'col-global';
   const password = 'rhrGZYMtK3kaYZFZ';
