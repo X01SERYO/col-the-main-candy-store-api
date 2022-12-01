@@ -44,7 +44,7 @@ const handleUpdate = async (req, res) => {
  */
 const route = server => {
   server.post('/brand.create', { schema: create.schema }, handleCreate);
-  server.get('brand.find', { schema: find.schema }, handleFind);
+  server.get('/brand.find', { schema: find.schema }, handleFind);
   server.patch('/brand.update', { schema: update.schema }, handleUpdate);
 };
 
