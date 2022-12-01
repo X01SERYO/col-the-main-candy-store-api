@@ -26,7 +26,7 @@ const handleFind = async req => {
  */
 const route = server => {
   server.post('/brand.create', { schema: create.schema }, handleCreate);
-  server.get('brand.find', { schema: find.schema }, handleFind);
+  server.get('/brand.find', { schema: find.schema }, handleFind);
 };
 
 export { route };

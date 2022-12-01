@@ -1,9 +1,9 @@
 /**
- * Finds  brands
+ * Finds brands
  * @param {Query} query The query
  */
-const findrand = async query => {
+const findBrand = async query => {
   console.log(query);
 };
 
-export { findrand };
+export { findBrand };
