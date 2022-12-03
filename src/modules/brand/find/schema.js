@@ -14,9 +14,18 @@ const schema = {
     200: {
       type: 'object',
       properties: {
-        brandId: { type: 'string' },
-        brandName: { type: 'string' },
-        brandCode: { type: 'string' },
+        brands: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'string' },
+              name: { type: 'string' },
+              code: { type: 'string' },
+            },
+          },
+        },
+        totalCount: { type: 'integer' },
       },
     },
   },

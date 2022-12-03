@@ -5,7 +5,7 @@ import * as update from './update';
 /**
  * Handles the create brand
  * @param {Request} req The request
- * @returns {String} The brand id
+ * @returns {Object} The brand id
  */
 const handleCreate = async req => {
   const cmd = new create.Command(req.body);
@@ -17,7 +17,7 @@ const handleCreate = async req => {
 /**
  * Handles the find brand
  * @param {Request} req  The request
- * @returns {Object[]} The brands
+ * @returns {Object} The brands and the total count
  */
 const handleFind = async req => {
   const query = new find.Query(req.query);
@@ -27,7 +27,7 @@ const handleFind = async req => {
 };
 
 /**
- *
+ * Handles the update brand
  * @param {Request} req The request
  * @param {Response} res The response
  */
