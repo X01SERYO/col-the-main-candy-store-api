@@ -4,17 +4,18 @@
 class Query {
   /**
    * Creates new find brand command
-   * @param {String} id The brand id
-   * @param {String} name The brand name
-   * @param {String} code The brand code
-   * @param {Number} page The brand page
-   * @param {Number} size The brand size
+   * @param {Object} query The request query
+   * @param {String} query.id The brand id
+   * @param {String} query.name The brand name
+   * @param {String} query.code The brand code
+   * @param {Number} query.page The brand page
+   * @param {Number} query.size The brand size
    */
   constructor({ id, name, code, page, size }) {
-    this.id = id;
+    this._id = id;
     this.name = name;
     this.code = code;
-    this.page = page;
+    this.page = page * size - size;
     this.size = size;
   }
 }
