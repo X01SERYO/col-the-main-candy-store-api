@@ -21,9 +21,9 @@ const handleCreate = async req => {
  */
 const handleFind = async req => {
   const query = new find.Query(req.query);
-  const brands = await find.handle(query);
+  const { brands, totalCount } = await find.handle(query);
 
-  return { brands };
+  return { brands, totalCount };
 };
 
 /**

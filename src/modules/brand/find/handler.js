@@ -6,9 +6,15 @@ import * as store from './store';
  * @returns {Object} The brands and the total count
  */
 const handle = async query => {
-  const brands = await store.findBrand(query);
-  
-  return brands;
+  if (!query.id) {
+    const { brands, totalCount } = await store.findBrands(query);
+
+    return { brands, totalCount };
+  } else {
+    const brands = await store.findBrand(query.id);
+
+    return { brands };
+  }
 };
 
 export { handle };
