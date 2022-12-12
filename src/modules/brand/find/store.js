@@ -4,16 +4,12 @@ import { Brand } from './brand.model';
 /**
  * Finds brands
  * @param {Query} query The query
- * @param {Object} brands The brands and the total count
+ * @returns {Object} The brands and the total count
  */
-const findBrand = async query => {
+const findBrands = async query => {
   const { page, size, ...filters } = query;
   query = JSON.parse(JSON.stringify(filters));
-  console.log(query, page, size);
   await db.connection();
-  const documents = await db.models.BrandModel.find(query)
-    .skip(page)
-    .limit(size);
 
   const [result] = await db.models.BrandModel.aggregate([
     { $match: query },
@@ -24,11 +20,23 @@ const findBrand = async query => {
       },
     },
   ]);
+  const brands = result.brands.map(document => new Brand(document));
+  const totalCount = result.totalCount[0].count;
 
-  const brands = documents.map(document => new Brand(document));
-  console.log(result);
-
-  return brands;
+  return { brands, totalCount };
 };
 
-export { findBrand };
+/**
+ * Finds a brand
+ * @param {String} id The brand id
+ * @returns {Brand} The brand
+ */
+const findBrand = async id => {
+  await db.connection();
+  const [document] = await db.models.BrandModel.find({ _id: id });
+  const brand = [new Brand(document)];
+
+  return brand;
+};
+
+export { findBrands, findBrand };

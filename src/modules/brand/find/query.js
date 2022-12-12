@@ -12,7 +12,7 @@ class Query {
    * @param {Number} query.size The brand size
    */
   constructor({ id, name, code, page, size }) {
-    this._id = id;
+    this.id = id;
     this.name = name;
     this.code = code;
     this.page = page * size - size;
