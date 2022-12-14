@@ -21,7 +21,10 @@ const findBrands = async query => {
     },
   ]);
   const brands = result.brands.map(document => new Brand(document));
-  const totalCount = result.totalCount[0].count;
+  let totalCount;
+  result.totalCount[0]
+    ? (totalCount = result.totalCount[0].count)
+    : (totalCount = 0);
 
   return { brands, totalCount };
 };
@@ -34,6 +37,9 @@ const findBrands = async query => {
 const findBrand = async id => {
   await db.connection();
   const [document] = await db.models.BrandModel.find({ _id: id });
+
+  if (!document) return undefined;
+
   const brand = [new Brand(document)];
 
   return brand;
