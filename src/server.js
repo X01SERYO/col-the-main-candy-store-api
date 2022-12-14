@@ -11,6 +11,7 @@ import { config, logger } from './infra';
  */
 const route = async server => {
   modules.brand.controller.route(server);
+  modules.product.controller.route(server);
 };
 
 const existProcess = () => process.exit(1);
