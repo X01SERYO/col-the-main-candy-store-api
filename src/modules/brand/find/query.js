@@ -3,7 +3,7 @@
  */
 class Query {
   /**
-   * Creates new find brand command
+   * Creates new find brand query
    * @param {Object} query The request query
    * @param {String} query.id The brand id
    * @param {String} query.name The brand name
