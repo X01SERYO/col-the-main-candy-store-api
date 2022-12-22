@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { logger } from '../logger';
 
 /**
  * Make connection with mongodb
@@ -12,6 +13,7 @@ const connection = async () => {
   try {
     await mongoose.connect(uri, connectionParams);
   } catch (error) {
+    logger.error(error);
     throw error;
   }
 };
