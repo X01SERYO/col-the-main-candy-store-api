@@ -38,6 +38,7 @@ class Query {
     this.brandId = brandId;
     this.page = page * size - size;
     this.size = size;
+    this.deleted = false;
   }
 }
 

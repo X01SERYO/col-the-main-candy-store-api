@@ -10,6 +10,7 @@ const ProductModel = mongoose.model(
     buyPrice: Number,
     salePrice: Number,
     brandId: String,
+    deleted: { type: Boolean, default: false },
   })
 );
 

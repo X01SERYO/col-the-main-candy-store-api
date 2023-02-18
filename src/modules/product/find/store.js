@@ -34,9 +34,9 @@ const findProducts = async query => {
  * @param {String} id The product id
  * @returns {product} The product
  */
-const findProduct = async id => {
+const findProduct = async (id, deleted) => {
   await db.connection();
-  const [document] = await db.models.ProductModel.find({ _id: id });
+  const [document] = await db.models.ProductModel.find({ _id: id, deleted });
 
   if (!document) return undefined;
 

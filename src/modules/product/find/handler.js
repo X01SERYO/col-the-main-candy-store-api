@@ -11,7 +11,7 @@ const handle = async query => {
 
     return { products, totalCount };
   } else {
-    const products = await store.findProduct(query.id);
+    const products = await store.findProduct(query.id, query.deleted);
 
     return { products };
   }
