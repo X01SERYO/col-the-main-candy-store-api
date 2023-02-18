@@ -1,3 +1,6 @@
+/**
+ * Represents a brand
+ */
 class Command {
   /**
    * Creates the update brand command
