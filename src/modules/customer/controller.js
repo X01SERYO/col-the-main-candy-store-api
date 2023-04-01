@@ -1,4 +1,5 @@
 import * as create from './create';
+import * as find from './find';
 
 /**
  * Handles the create customer
@@ -13,11 +14,24 @@ const handleCreate = async req => {
 };
 
 /**
+ * Handles the find customer
+ * @param {Request} req The request
+ * @returns {Object} The products and the total count
+ */
+const handleFind = async req => {
+  const query = new find.Query(req.query);
+  const { customers, totalCount } = await find.handle(query);
+
+  return { customers, totalCount };
+};
+
+/**
  * Routes request to handlers
  * @param {Fastify} server The server
  */
 const route = server => {
   server.post('/customer.create', { schema: create.schema }, handleCreate);
+  server.get('/customer.find', { schema: find.schema }, handleFind);
 };
 
 export { route };

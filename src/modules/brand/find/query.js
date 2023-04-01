@@ -1,5 +1,5 @@
 /**
- * Represents a brand
+ * Represents a brand query
  */
 class Query {
   /**

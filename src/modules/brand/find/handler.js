@@ -1,7 +1,7 @@
 import * as store from './store';
 
 /**
- * Handles the find brand query
+ * Handles the find brands query
  * @param {Query} query The query
  * @returns {Object} The brands and the total count
  */
