@@ -6,6 +6,7 @@ class Command {
    * Creates the update product command
    * @param {String} body The request body
    * @param {String} body.id The product id
+   * @param {Number} body.name The product name
    * @param {Number} body.boxUnits The products per box
    * @param {Number} body.productUnits The units per product
    * @param {Number} body.profitRate The product profit rate
