@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
-import { logger } from '../logger';
+import { config, logger } from './../../infra';
 
 /**
  * Make connection with mongodb
  */
 const connection = async () => {
-  const username = 'mcs';
-  const password = 'MSLKRA2Rf0fRDgvi';
-  const database = 'develop';
+  const username = config.db.mongo.user;
+  const password = config.db.mongo.password;
+  const database = config.db.mongo.database;
   const uri = `mongodb+srv://${username}:${password}@develop.yyja1u8.mongodb.net/${database}?retryWrites=true&w=majority`;
   const connectionParams = { useNewUrlParser: true, useUnifiedTopology: true };
   try {

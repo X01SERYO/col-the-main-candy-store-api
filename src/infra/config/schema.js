@@ -19,16 +19,21 @@ const schema = {
     },
   },
   db: {
-    pg: {
+    mongo: {
       user: {
         format: 'String',
         default: 'user',
-        env: 'PGUSER',
+        env: 'MONGO_USER',
       },
       password: {
         format: 'String',
         default: 'password',
-        env: 'PGPASSWORD',
+        env: 'MONGO_PASSWORD',
+      },
+      database: {
+        format: 'String',
+        default: 'password',
+        env: 'MONGO_DATABASE',
       },
     },
   },
