@@ -10,7 +10,7 @@ class Query {
    * @param {String} query.phone The customer phone
    * @param {Boolean} query.deleted The condition if customers are deleted
    */
-  constructor({ id, name, phone, deleted, page, size }) {
+  constructor({ id, name, phone, deleted = false, page, size }) {
     this.id = id;
     this.name = name;
     this.phone = phone;
