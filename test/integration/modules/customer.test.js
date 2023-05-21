@@ -18,7 +18,7 @@ test('customer.create', async () => {
 
 test('customer.find', async () => {
   const service = '/customer.find';
-  const data = { id: customerId, page: 0, size: 0 };
+  const data = { id: customerId };
   const { status, body } = await supertest(path).get(service).query(data);
   expect(status).toBe(200);
   expect(body).not.toBeNull();
