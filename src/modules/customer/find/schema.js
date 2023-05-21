@@ -1,6 +1,6 @@
 const schema = {
-  body: {
-    oneOf: [
+  query: {
+    anyOf: [
       {
         type: 'object',
         required: ['id'],
