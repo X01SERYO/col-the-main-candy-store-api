@@ -1,6 +1,19 @@
+import * as del from './delete';
 import * as create from './create';
 import * as find from './find';
 import * as update from './update';
+
+/**
+ * Handles the delete customer
+ * @param {Request} req The request
+ * @param {Response} res The response
+ */
+const handleDelete = async (req, res) => {
+  const cmd = new del.Command(req.body);
+  await del.handle(cmd);
+
+  res.status(204);
+};
 
 /**
  * Handles the create customer
@@ -21,9 +34,9 @@ const handleCreate = async req => {
  */
 const handleFind = async req => {
   const query = new find.Query(req.query);
-  const { customers, totalCount } = await find.handle(query);
+  const response = await find.handle(query);
 
-  return { customers, totalCount };
+  return response;
 };
 
 /**
@@ -43,6 +56,7 @@ const handleUpdate = async (req, res) => {
  * @param {Fastify} server The server
  */
 const route = server => {
+  server.patch('/customer.delete', { schema: del.schema }, handleDelete);
   server.post('/customer.create', { schema: create.schema }, handleCreate);
   server.get('/customer.find', { schema: find.schema }, handleFind);
   server.patch('/customer.update', { schema: update.schema }, handleUpdate);

@@ -1,5 +1,5 @@
 /**
- * Represents a customer
+ * Represents a customer command
  */
 class Command {
   /**

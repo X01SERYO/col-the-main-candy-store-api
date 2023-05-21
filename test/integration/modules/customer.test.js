@@ -32,7 +32,14 @@ test('customer.update', async () => {
     phone: '1',
   };
   const { status, body } = await supertest(path).patch(service).send(data);
-  console.log(body);
+  expect(status).toBe(204);
+  expect(body).not.toBeNull();
+});
+
+test('customer.delete', async () => {
+  const service = '/customer.delete';
+  const data = { id: customerId };
+  const { status, body } = await supertest(path).patch(service).send(data);
   expect(status).toBe(204);
   expect(body).not.toBeNull();
 });

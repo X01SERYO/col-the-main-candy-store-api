@@ -47,7 +47,7 @@ const handleError = async (err, req, res) => {
  */
 const openApiConfig = () => {
   const openApiConfig = {
-    swagger: {
+    openapi: {
       host: 'localhost:4000',
       info: {
         version: '0.0.1',

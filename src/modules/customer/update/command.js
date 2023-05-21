@@ -4,7 +4,7 @@
 class Command {
   /**
    * Creates the update customer command
-   * @param {String} body The request body
+   * @param {Object} body The request body
    * @param {String} body.id The customer id
    * @param {Number} body.name The customer name
    * @param {Number} body.phone The customer phone

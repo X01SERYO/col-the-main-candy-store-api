@@ -40,7 +40,7 @@ const findCustomer = async (id, deleted) => {
 
   if (!document) return undefined;
 
-  const customer = [new Customer(document)];
+  const customer = new Customer(document);
 
   return customer;
 };

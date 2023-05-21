@@ -1,7 +1,7 @@
 import { db } from '../../../infra';
 
 /**
- * Creates new customer
+ * Creates a new customer
  * @param {Command} cmd The command
  * @returns {String} The customer id
  */
