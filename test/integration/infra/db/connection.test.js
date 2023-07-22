@@ -1,4 +1,4 @@
-import { connection, models } from '../../../src/infra/db';
+import { connection, models } from '../../../../src/infra/db';
 
 let BRANDID;
 

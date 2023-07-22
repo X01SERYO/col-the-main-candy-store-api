@@ -12,6 +12,7 @@ import { config, logger } from './infra';
 const route = async server => {
   modules.brand.controller.route(server);
   modules.product.controller.route(server);
+  modules.customer.controller.route(server);
 };
 
 const existProcess = () => process.exit(1);
@@ -46,8 +47,8 @@ const handleError = async (err, req, res) => {
  */
 const openApiConfig = () => {
   const openApiConfig = {
-    swagger: {
-      host: 'localhost',
+    openapi: {
+      host: 'localhost:4000',
       info: {
         version: '0.0.1',
         title: 'col-the-main-candy-store',
