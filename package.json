@@ -1,8 +1,8 @@
 {
   "type": "module",
-  "name": "col-service-catalog",
+  "name": "col-the-main-candy-store",
   "version": "1.0.0",
-  "description": "Catalog of developed software services",
+  "description": "The app for main candy store",
   "main": "src/app.js",
   "autor": {
     "name": ""
