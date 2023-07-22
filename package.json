@@ -18,7 +18,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
-    "nodemon": "^2.0.19",
+    "nodemon": "^3.0.1",
     "prettier": "^2.7.1"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "convict": "^6.2.3",
     "fastify": "^3.29.0",
     "jest": "^29.3.1",
-    "mongoose": "^6.7.3",
+    "mongoose": "6.11.3",
     "pino": "^8.7.0",
     "ramda": "^0.28.0",
     "supertest": "^6.3.3"
