@@ -26,7 +26,7 @@ jobs:
           ENV_VAR_1: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           echo "Variables de ambiente:"
-          echo "ENV_VAR_1: $ENV_VAR_1"
+          env
 
       - name: Ejecutar despliegue
         run: gcloud --quiet config set project tu-proyecto-gcp-id && gcloud app deploy app.yaml --version=main
