@@ -23,7 +23,7 @@ jobs:
       - name: Mostrar variables de ambiente y secretos
         env:
           # Imprime las variables de ambiente
-          ENV_VAR_1: ${{ secrets.GOOGLE_PROJECT_ID }}
+          ENV_VAR_1: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           echo "Variables de ambiente:"
           echo "ENV_VAR_1: $ENV_VAR_1"
