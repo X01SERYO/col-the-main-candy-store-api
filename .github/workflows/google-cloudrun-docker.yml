@@ -3,7 +3,7 @@ name: Despliegue a GCP
 on:
   push:
     branches:
-      - main  # Cambia esto si estás utilizando otra rama
+      - develop  # Cambia esto si estás utilizando otra rama
 
 jobs:
   deploy:
@@ -23,12 +23,10 @@ jobs:
       - name: Mostrar variables de ambiente y secretos
         env:
           # Imprime las variables de ambiente
-          ENV_VAR_1: ${{ secrets.ENV_VAR_1 }}
-          ENV_VAR_2: ${{ secrets.ENV_VAR_2 }}
+          ENV_VAR_1: ${{ secrets.GOOGLE_PROJECT_ID }}
         run: |
           echo "Variables de ambiente:"
           echo "ENV_VAR_1: $ENV_VAR_1"
-          echo "ENV_VAR_2: $ENV_VAR_2"
 
       - name: Ejecutar despliegue
         run: gcloud --quiet config set project tu-proyecto-gcp-id && gcloud app deploy app.yaml --version=main
