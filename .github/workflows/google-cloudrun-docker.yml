@@ -13,20 +13,23 @@ jobs:
       - name: Checkout del código fuente
         uses: actions/checkout@v2
 
+      - name: Mostrar variables de ambiente y secretos
+        env:
+          # Variables de ambiente
+          ENV_VAR_1: ${{ secrets.ENV_VAR_1 }}
+          ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
+          # ... Puedes seguir agregando más variables aquí según sea necesario
+        run: |
+          echo "Variables de ambiente:"
+          echo "ENV_VAR_1: $ENV_VAR_1"
+          echo "ENV_VAR_2: $ENV_VAR_2"
+
       - name: Autenticación con Google Cloud Platform
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           project_id: tu-proyecto-gcp-id
         env:
           CLOUDSDK_AUTH_CREDENTIAL_FILE_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-
-      - name: Mostrar variables de ambiente y secretos
-        env:
-          # Imprime las variables de ambiente
-          ENV_VAR_1: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        run: |
-          echo "Variables de ambiente:"
-          env
 
       - name: Ejecutar despliegue
         run: gcloud --quiet config set project tu-proyecto-gcp-id && gcloud app deploy app.yaml --version=main
