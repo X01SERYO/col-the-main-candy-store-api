@@ -28,8 +28,10 @@ jobs:
           SECRET_TWO: ${{ secrets.GOOGLE_PROJECT_ID }}
         with:
           app_yaml_path: "app.template.yaml"
-      - name: Variables
-        run: npx gae-ayaml-env
+      - name: Mostrar valores de variables de ambiente
+        run: |
+          echo "Valor de SECRET_ONE: $SECRET_ONE"
+          echo "Valor de SECRET_TWO: $SECRET_TWO"
       - name: Autenticación con Google Cloud Platform
         uses: 'google-github-actions/auth@v0'
         with:
