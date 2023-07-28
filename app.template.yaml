@@ -3,3 +3,8 @@ env: standard
 intance_class: B4
 manual_scaling:
   instances: 1
+env_variables:
+  APP_ENV: develop
+  SECRET_ONE: $SECRET_ONE
+  SECRET_TWO: $SECRET_TWO
+  ANOTHER_PARAM: "73"
