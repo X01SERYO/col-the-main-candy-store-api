@@ -1,0 +1,5 @@
+runtime: nodejs16
+env: standard
+intance_class: B4
+manual_scaling:
+  instances: 1
