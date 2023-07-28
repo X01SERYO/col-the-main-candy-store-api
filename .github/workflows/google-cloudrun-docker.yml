@@ -6,7 +6,7 @@ on:
       - develop  # Cambia esto si estás utilizando otra rama
 env:
   # Variables de ambiente
-  ENV_VAR_1: ${{ secrets.ENV_VAR_1 }}
+  ENV_VAR_1: ${{ secrets[format('ENV_VAR_1_{0}', dev)] }}
   ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
   ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
