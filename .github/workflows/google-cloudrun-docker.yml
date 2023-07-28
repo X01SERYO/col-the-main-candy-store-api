@@ -17,6 +17,10 @@ jobs:
     steps:
       - name: Checkout del código fuente
         uses: actions/checkout@v2
+      - name: Dependencias
+        run: npx gae-ayaml-env
+      - name: Variables
+        run: npx gae-ayaml-env
       - name: Reemplazo
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         with:
