@@ -6,9 +6,9 @@ on:
       - develop  # Cambia esto si estás utilizando otra rama
 env:
   # Variables de ambiente
-  ENV_VAR_1: ${{ secrets.ENV_VAR_1, dev }}
-  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID, dev }}
-  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS, dev }}
+  ENV_VAR_1: ${{ secrets.ENV_VAR_1 }}
+  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
+  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
 jobs:
   deploy_on_googles_app_engine:
@@ -24,7 +24,7 @@ jobs:
       - name: Autenticación con Google Cloud Platform
         uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS, dev }}'
+          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
 
           
 #jobs:
