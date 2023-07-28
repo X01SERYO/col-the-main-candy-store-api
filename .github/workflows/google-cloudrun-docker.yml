@@ -27,7 +27,7 @@ jobs:
       - name: Autenticación con Google Cloud Platform
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          project_id: tu-proyecto-gcp-id
+          project_id: ${{ secrets.GOOGLE_PROJECT_ID }}
         env:
           CLOUDSDK_AUTH_CREDENTIAL_FILE_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
