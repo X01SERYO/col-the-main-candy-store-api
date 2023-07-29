@@ -6,7 +6,7 @@ on:
       - develop  # Cambia esto si estás utilizando otra rama
 env:
   # Variables de ambiente
-  GCP: ${{ secrets[format('GCP_SEC_{0}', github.event.inputs.environment)] }}
+  GCP: ${{ secrets.'GCP_SEC_{0}' }}
 #  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
 #  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
