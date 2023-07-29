@@ -30,8 +30,9 @@ jobs:
           app_yaml_path: "app.template.yaml"
       - name: test
         run: |
-          echo "TEST TAMBEIN"
+          echo "TEST TAMBIEN"
           echo $SECRET_ONE
+          echo "TEST x2"
       - name: Variables
         run: npx gae-ayaml-env
       - name: Autenticación con Google Cloud Platform
