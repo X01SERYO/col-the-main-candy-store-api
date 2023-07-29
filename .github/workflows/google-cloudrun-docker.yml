@@ -24,7 +24,7 @@ jobs:
       - name: Reemplazo
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
-          SECRET_ONE: ${{ secrets.GCP_SEC }}
+          SECRET_ONE: '{{ secrets.GCP_SEC }}'
           SECRET_TWO: ${{ secrets.GOOGLE_PROJECT_ID }}
         with:
           app_yaml_path: "app.template.yaml"
