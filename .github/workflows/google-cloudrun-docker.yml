@@ -8,7 +8,7 @@ on:
 env:
   # Variables de ambiente
   GCP: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-#  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
+  GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
 #  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
 jobs:
@@ -43,6 +43,9 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: ${{ env.GCP }}
+      - name: Ejecutar despliegue
+        run: gcloud app deploy app.template.yaml --quiet  --project ${{ env.GOOGLE_PROJECT_ID }} --version=develop
+
           
 #jobs:
 #  deploy:
