@@ -40,7 +40,7 @@ jobs:
       - name: Autenticación con Google Cloud Platform
         uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
+          credentials_json: $ENV_VAR_1
           
 #jobs:
 #  deploy:
