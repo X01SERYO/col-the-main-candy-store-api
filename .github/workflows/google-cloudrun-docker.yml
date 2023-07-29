@@ -25,7 +25,7 @@ jobs:
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
           SECRET_ONE: '{{ secrets.GCP_SEC }}'
-          SECRET_TWO: ${{ secrets.GOOGLE_PROJECT_ID }}
+          SECRET_TWO: $GOOGLE_PROJECT_ID
         with:
           app_yaml_path: "app.template.yaml"
       - name: Variables
@@ -33,7 +33,7 @@ jobs:
       - name: test
         run: |
           echo "TEST TAMBIEN"
-          echo $SECRET_ONE
+          echo $SECRET_TWO
           echo $ENV_VAR_1
           echo "TEST x2"
 
