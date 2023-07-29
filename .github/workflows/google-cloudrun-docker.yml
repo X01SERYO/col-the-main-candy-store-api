@@ -14,6 +14,7 @@ jobs:
   deploy_on_googles_app_engine:
     name: Deploy
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Checkout del código fuente
         uses: actions/checkout@v2
