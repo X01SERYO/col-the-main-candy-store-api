@@ -7,7 +7,7 @@ on:
 
 env:
   # Variables de ambiente
-  GCP: ${{ secrets.GCP_SEC }}
+  GCP: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 #  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
 #  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
@@ -42,7 +42,7 @@ jobs:
       - name: Autenticación con Google Cloud Platform
         uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: $GCP_SEC
+          credentials_json: $GOOGLE_APPLICATION_CREDENTIALS
           
 #jobs:
 #  deploy:
