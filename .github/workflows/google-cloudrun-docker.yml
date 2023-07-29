@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "TEST TAMBIEN"
           echo $SECRET_ONE
-          echo $GCP_SEC
+          echo $$_GCP_SEC
           echo "TEST x2"
 
       - name: Autenticación con Google Cloud Platform
