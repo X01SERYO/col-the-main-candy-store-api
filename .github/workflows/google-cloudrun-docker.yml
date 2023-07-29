@@ -35,7 +35,7 @@ jobs:
       - name: test
         run: |
           echo "TEST TAMBIEN"
-          echo $SECRET_ONE
+          echo $GOOGLE_PROJECT_ID
           echo $GCP
           echo "TEST x2"
 
