@@ -26,9 +26,12 @@ jobs:
         env:
           SECRET_ONE: ${{ secrets.GCP_SEC }}
           SECRET_TWO: ${{ secrets.GOOGLE_PROJECT_ID }}
-          run: echo SECRET_ONE
         with:
           app_yaml_path: "app.template.yaml"
+      - name: test
+        run: |
+          echo "TEST TAMBEIN"
+          echo SECRET_ONE
       - name: Variables
         run: npx gae-ayaml-env
       - name: Autenticación con Google Cloud Platform
