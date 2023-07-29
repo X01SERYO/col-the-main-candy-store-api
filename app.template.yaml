@@ -1,6 +1,6 @@
 runtime: nodejs16
 env: standard
-intance_class: B4
+instance_class: B4
 manual_scaling:
   instances: 1
 env_variables:
