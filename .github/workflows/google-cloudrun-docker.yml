@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop  # Cambia esto si estás utilizando otra rama
+
 env:
   # Variables de ambiente
   GCP: ${{ secrets.GCP_SEC }}
@@ -25,7 +26,7 @@ jobs:
       - name: Reemplazo
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
-          SECRET_ONE: '{{ secrets.GCP_SEC }}'
+          SECRET_ONE: ${{ secrets.GCP_SEC }}
           SECRET_TWO: $GOOGLE_PROJECT_ID
         with:
           app_yaml_path: "app.template.yaml"
@@ -34,7 +35,7 @@ jobs:
       - name: test
         run: |
           echo "TEST TAMBIEN"
-          echo $SECRET_TWO
+          echo $SECRET_ONE
           echo $GCP
           echo "TEST x2"
 
