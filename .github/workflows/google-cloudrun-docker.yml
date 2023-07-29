@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - develop  # Cambia esto si estás utilizando otra rama
-#env:
+env:
   # Variables de ambiente
-#  ENV_VAR_1: ${{ secrets[format('ENV_VAR_1_{0}', github.event.inputs.enviroment )] }}
+  ENV_VAR_1: 'HOLA MUNDO'
 #  ENV_VAR_2: ${{ secrets.GOOGLE_PROJECT_ID }}
 #  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "TEST TAMBIEN"
           echo $SECRET_ONE
-          echo $$_GCP_SEC
+          echo $ENV_VAR_1
           echo "TEST x2"
 
       - name: Autenticación con Google Cloud Platform
