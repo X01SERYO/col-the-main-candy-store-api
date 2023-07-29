@@ -28,13 +28,15 @@ jobs:
           SECRET_TWO: ${{ secrets.GOOGLE_PROJECT_ID }}
         with:
           app_yaml_path: "app.template.yaml"
+      - name: Variables
+        run: npx gae-ayaml-env
       - name: test
         run: |
           echo "TEST TAMBIEN"
           echo $SECRET_ONE
+          echo $GCP_SEC
           echo "TEST x2"
-      - name: Variables
-        run: npx gae-ayaml-env
+
       - name: Autenticación con Google Cloud Platform
         uses: 'google-github-actions/auth@v0'
         with:
