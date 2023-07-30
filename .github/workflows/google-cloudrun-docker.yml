@@ -45,7 +45,7 @@ jobs:
           credentials_json: ${{ env.GCP }}
       - name: Ejecutar despliegue
         run: |
-            gcloud app create
+            gcloud app create --region=us-central1
             gcloud app deploy app.template.yaml --quiet  --project ${{ env.GOOGLE_PROJECT_ID }} --version=develop
           
 #jobs:
