@@ -44,10 +44,9 @@ jobs:
         with:
           credentials_json: ${{ env.GCP }}
       - name: Ejecutar despliegue
-        run: |
-            gcloud app create --region=us-central
-            gcloud app deploy app.template.yaml --quiet  --project ${{ env.GOOGLE_PROJECT_ID }} --version=develop
-          
+        run: gcloud app deploy app.template.yaml --quiet  --project ${{ env.GOOGLE_PROJECT_ID }} --version=develop
+
+# Adds command "gcloud app create --region=us-central" the firts time in run "Ejecutar depliegue"
 #jobs:
 #  deploy:
 #    runs-on: ubuntu-latest
