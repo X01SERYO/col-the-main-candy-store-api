@@ -28,7 +28,7 @@ jobs:
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
           SECRET_ONE: ${{ secrets.GCP_SEC }}
-          SECRET_TWO: $GOOGLE_PROJECT_ID
+          SERVER_DOCS_EXPOSE:  ${{ env.SERVER_DOCS_EXPOSE }}
         with:
           app_yaml_path: "app.template.yaml"
       - name: Variables
