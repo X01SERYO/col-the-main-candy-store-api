@@ -9,7 +9,7 @@ env:
   # Variables de ambiente
   GCP: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-  SERVER_DOCS_EXPOSE:  ${{ env.SERVER_DOCS_EXPOSE }}
+  SERVER_DOCS_EXPOSE:  ${{ secrets.SERVER_DOCS_EXPOSE }}
 #  ENV_VAR_3: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
 jobs:
