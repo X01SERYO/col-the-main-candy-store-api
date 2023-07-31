@@ -97,3 +97,4 @@ const start = async server => {
 };
 
 export { build, start };
+console.log(process.env);
