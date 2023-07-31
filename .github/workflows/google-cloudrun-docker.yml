@@ -9,7 +9,7 @@ env:
   # Variables de ambiente
   GCP: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-  SERVER_DOCS_EXPOSE: ${{ env.SERVER_DOCS_EXPOSE }}
+  SERVER_DOCS_EXPOSE: ${{ vars.SERVER_DOCS_EXPOSE }}
   
 jobs:
   deploy_on_googles_app_engine:
@@ -27,7 +27,7 @@ jobs:
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
           SECRET_ONE: ${{ secrets.GCP_SEC }}
-          SERVER_DOCS_EXPOSE:  ${{ env.SERVER_DOCS_EXPOSE }}
+#          SERVER_DOCS_EXPOSE:  ${{ env.SERVER_DOCS_EXPOSE }}
         with:
           app_yaml_path: "app.template.yaml"
       - name: Variables
