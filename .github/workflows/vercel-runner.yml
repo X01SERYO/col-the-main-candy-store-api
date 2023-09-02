@@ -26,8 +26,8 @@ jobs:
 
       - name: Reemplazo
         uses: 73h/gae-app-yaml-replace-env-variables@v0.3
-        with:
-          app_yaml_path: "app.template.yaml"
+        #with:
+          #app_yaml_path: "app.template.yaml"
       - name: Variables
         run: npx gae-ayaml-env
 
