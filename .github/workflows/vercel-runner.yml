@@ -27,7 +27,8 @@ jobs:
         run: |
           echo "TEST TAMBIEN"
           echo $SERVER_DOCS_EXPOSE
-          echo $VERCEL_TOKEN
+          echo secrets.VERCEL_TOKEN
+          echo ${{  secrets.VERCEL_TOKEN }}
           echo "TEST FIN"
 
       - name: Install Vercel CLI
