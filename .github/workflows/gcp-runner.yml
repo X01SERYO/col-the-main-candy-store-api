@@ -1,0 +1,33 @@
+name: GCP Development Deployment
+
+on:
+  push:
+    branches:
+      - main  # Cambia esto si estás utilizando otra rama
+
+env:
+  # Variables de ambiente
+  GCP: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+  GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+  SERVER_DOCS_EXPOSE: ${{ vars.SERVER_DOCS_EXPOSE }}
+  
+jobs:
+  deploy_on_googles_app_engine:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Checkout del código fuente
+        uses: actions/checkout@v2
+      - name: Reemplazo
+        uses: 73h/gae-app-yaml-replace-env-variables@v0.3
+        with:
+          app_yaml_path: "app.template.yaml"
+      - name: Variables
+        run: npx gae-ayaml-env
+      - name: Autenticación con Google Cloud Platform
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: ${{ env.GCP }}
+      - name: Ejecutar despliegue
+        run: gcloud app deploy app.template.yaml --quiet  --project ${{ env.GOOGLE_PROJECT_ID }} --version=develop
