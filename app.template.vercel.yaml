@@ -1,0 +1,2 @@
+env_variables:
+  SERVER_DOCS_EXPOSE: $SERVER_DOCS_EXPOSE
