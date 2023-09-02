@@ -34,7 +34,7 @@ jobs:
       - name: TEST INSTALL NODE
         run: npm ci
       - name: TEST RUN NODE        
-        run: npm run local
+        run: npm run start
 
 #      - name: Install Vercel CLI
 #        run: npm install --global vercel@latest
