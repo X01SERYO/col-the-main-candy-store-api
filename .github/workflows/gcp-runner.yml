@@ -1,9 +1,9 @@
-name: GCP Development Deployment
+name: Despliegue a GCP
 
 on:
   push:
     branches:
-      - develop  # Cambia esto si estás utilizando otra rama
+      - main  # Cambia esto si estás utilizando otra rama
 
 env:
   # Variables de ambiente
