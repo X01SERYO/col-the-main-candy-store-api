@@ -3,7 +3,7 @@ name: GCP Development Deployment
 on:
   push:
     branches:
-      - main  # Cambia esto si estás utilizando otra rama
+      - develop  # Cambia esto si estás utilizando otra rama
 
 env:
   # Variables de ambiente
